@@ -32,7 +32,7 @@ ggplot(map, aes(
           y=Fret,
           size=heat))+
   geom_point()+
-  scale_y_reverse(limits=c(6, 0.5), breaks=1:6)+
+  scale_y_reverse(limits=c(6.5, 0.5), breaks=1:6, minor_breaks=seq(.5, 6.5, 1))+
   labs(title="Heatmap of Guitar Tabs",
        subtitle=paste("for", songname),
        x="String", y="Fret",
