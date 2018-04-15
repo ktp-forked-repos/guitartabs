@@ -31,13 +31,15 @@ ggplot(map, aes(
                   labels=c("E","A","D","G","B","e")),
           y=Fret,
           size=heat))+
-  geom_point()+
+  geom_point(shape=21, color="black", fill="steelblue1")+
   scale_y_reverse(limits=c(6.5, 0.5), breaks=1:6, minor_breaks=seq(.5, 6.5, 1))+
   labs(title="Heatmap of Guitar Tabs",
        subtitle=paste("for", songname),
        x="String", y="Fret",
-       size="",
+       size="Frequency",
        caption="created by /u/zonination")+
   theme_bw()+
   theme(panel.grid.minor.x=element_blank())+
   theme(panel.grid.major.y=element_blank())
+ggsave(paste("gallery/", songname, ".png", sep=""),
+       height=6, width=4, dpi=120, type="cairo-png")
